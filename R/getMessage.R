@@ -39,7 +39,7 @@ getMessage <- function(messageId,
   }
   
   # Add the message ID to the result - just for user convenience.
-  res$message_id <- messageId
+  res$messageId <- messageId
   
   # Done.
   return(res)
