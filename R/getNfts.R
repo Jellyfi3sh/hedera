@@ -3,7 +3,8 @@
 #' @description
 #' Returns metadata about the instances of a given NFT, identified by token ID.
 #'    Can optionally filter by Hedera account ID and/or NFT serial number.
-#'
+#' @export
+#' 
 getNfts <- function(tokenId,
                     accountId = NULL,
                     serialNo = NULL,
@@ -13,11 +14,7 @@ getNfts <- function(tokenId,
                     asDf = FALSE) {
 
   # Determine network base URL.
-  baseUrl <- switch(
-    network,
-    "mainnet" = "https://mainnet-public.mirrornode.hedera.com/",
-    "testnet" = "https://testnet.mirrornode.hedera.com/",
-    "previewnet" = "https://previewnet.mirrornode.hedera.com/")
+  baseUrl <- getNetworkBaseUrl(network)
 
   # Initialise variables.
   lsRes <- NULL
