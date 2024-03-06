@@ -15,6 +15,9 @@ getMessage(
 
 \item{network}{Character. Which Hedera network to use. Must be one of 
 "mainnet", "previewnet" or "testnet".}
+
+\item{decode}{Logical. If TRUE, will decode the base64-encoded memo field of
+the message; if FALSE, will leave the memo field as is. Default is FALSE.}
 }
 \description{
 Retrieves a Hedera message from the network.

@@ -4,6 +4,8 @@
 #' @param messageId The ID of the message to retrieve, e.g., "1709313529.822677003".
 #' @param network Character. Which Hedera network to use. Must be one of 
 #'    "mainnet", "previewnet" or "testnet".
+#' @param decode Logical. If TRUE, will decode the base64-encoded memo field of
+#'    the message; if FALSE, will leave the memo field as is. Default is FALSE.
 #' @export
 #' 
 getMessage <- function(messageId,
