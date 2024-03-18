@@ -48,7 +48,12 @@ getNfts <- function(tokenId,
     if("next" %in% names(res$links)) {
       if(length(res$links$`next`) > 0) {
         bCont <- TRUE
-        q <- res$links$`next`
+        q <- paste0(
+          gsub(pattern = ".com/", 
+               replacement = ".com", 
+               x = baseUrl, 
+               fixed = TRUE), 
+          res$links$`next`)
       }
     }
 
