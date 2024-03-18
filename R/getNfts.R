@@ -38,10 +38,6 @@ getNfts <- function(tokenId,
 
     res <- httr::content(res, as = "parsed")
 
-    if(length(res$nfts) > 1) {
-      stop("length(res$nfts) > 1") # TODO.
-    }
-
     if(length(res$nfts) == 0) {
       break
     }
