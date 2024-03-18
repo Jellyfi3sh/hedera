@@ -3,6 +3,15 @@
 #' @description
 #' Returns metadata about the instances of a given NFT, identified by token ID.
 #'    Can optionally filter by Hedera account ID and/or NFT serial number.
+#' @param limit Integer. Optional. The maximum number of results to return. 
+#'    Defaults to 100.
+#' @param order Character. Optional. 'asc' will sort the results in ascending
+#'   order of serial number; 'desc' will sort the results in descending order of
+#'   serial number. Defaults to 'asc'.
+#' @param network Character. Optional. The network to connect to. Defaults to
+#'    'testnet'.
+#' @param asDf Logical. Optional. If TRUE, the function will return the results
+#'   as a data frame. Defaults to FALSE, which will return the results as a list.
 #' @export
 #' 
 getNfts <- function(tokenId,
@@ -59,11 +68,11 @@ getNfts <- function(tokenId,
 
   }
 
-  if (length(lsRes) == 0) {
+  if(length(lsRes) == 0) {
     return(NULL)
   }
 
-  if (!asDf) {
+  if(!asDf) {
     return(lsRes)
   }
 

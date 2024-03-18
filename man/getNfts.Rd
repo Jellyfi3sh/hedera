@@ -14,6 +14,20 @@ getNfts(
   asDf = FALSE
 )
 }
+\arguments{
+\item{limit}{Integer. Optional. The maximum number of results to return. 
+Defaults to 100.}
+
+\item{order}{Character. Optional. 'asc' will sort the results in ascending
+order of serial number; 'desc' will sort the results in descending order of
+serial number. Defaults to 'asc'.}
+
+\item{network}{Character. Optional. The network to connect to. Defaults to
+'testnet'.}
+
+\item{asDf}{Logical. Optional. If TRUE, the function will return the results
+as a data frame. Defaults to FALSE, which will return the results as a list.}
+}
 \description{
 Returns metadata about the instances of a given NFT, identified by token ID.
    Can optionally filter by Hedera account ID and/or NFT serial number.
